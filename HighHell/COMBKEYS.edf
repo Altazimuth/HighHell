@@ -1,0 +1,102 @@
+artifact PurpleCard
+{
+  artifacttype Key
+}
+
+artifact OrangeCard
+{
+  artifacttype Key
+}
+
+artifact GreenCard
+{
+  artifacttype Key
+}
+
+thingtype DoomPurpleCard 
+{
+  doomednum   30000
+  flags       SPECIAL|NOTDMATCH
+  acs_spawndata
+  {
+    num   255
+    modes doom
+  }
+  
+  states
+  @"
+  Spawn:
+    PKEY A 10
+    PKEY B 10 bright
+    loop
+  "@
+}
+
+thingtype DoomOrangeCard 
+{
+  doomednum   30001
+  flags       SPECIAL|NOTDMATCH
+  acs_spawndata
+  {
+    num   254
+    modes doom
+  }
+    
+  states
+  @"
+  Spawn:
+    OKEY A 10
+    OKEY B 10 bright
+    loop
+  "@
+}
+
+thingtype DoomGreenCard 
+{
+  doomednum   30002
+  flags       SPECIAL|NOTDMATCH
+  acs_spawndata
+  { 
+    num   253
+    modes doom
+  }
+
+  states
+  @"
+  Spawn:
+    GKEY A 10
+    GKEY B 10 bright
+    loop
+  "@
+}
+
+// Purple Card lock
+lockdef 12
+{
+  require  PurpleCard
+  mapcolor "#800080"
+  //mapcolor "$mapcolor_frnd"
+   
+  message       "You need a purple card to activate this object"
+  remotemessage "You need a purple card to activate this object"
+}
+
+// Orange Card lock
+lockdef 13
+{
+  require  OrangeCard
+  mapcolor "#FF7F00"
+   
+  message       "You need a orange card to activate this object"
+  remotemessage "You need a orange card to activate this object"
+}
+
+// Green Card lock
+lockdef 23
+{
+  require  GreenCard
+  mapcolor "#00FF00"
+   
+  message       "You need a green card to activate this object"
+  remotemessage "You need a green card to activate this object"
+}

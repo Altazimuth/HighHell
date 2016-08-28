@@ -1,0 +1,6 @@
+damagetype FallingForever
+{
+  num 300;
+  obituary "dropped off the world";
+  sourceless true
+}

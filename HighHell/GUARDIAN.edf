@@ -1,0 +1,61 @@
+thingtype Guardian 
+{
+  doomednum   30004
+  basictype FlyingMonster
+  addflags NOBLOOD
+  spawnhealth 80
+  painchance  64
+  speed       12
+  radius      16.0
+  height      32.0
+  mass 150
+  seesound    "guardian/sight"
+  painsound   "dmpain"
+  deathsound  "guardian/death"
+  activesound "guardian/active"
+  
+  obituary_normal "got shown why they're called guardians."
+  //obituary_melee  "got shown why they're called guardians."
+  acs_spawndata 
+  { 
+    num   251;
+    modes doom 
+  }
+
+
+
+  States
+  @"
+  Spawn: 
+    GRDN ABCDEF 5 A_Look
+    Loop
+  See:
+    GRDN ABCDEF 3 A_Chase
+    Loop
+  Missile:
+    GRDN GH 8 Bright A_FaceTarget
+    GRDN I 6 Bright A_SkelMissile
+    GRDN H 6 Bright A_FaceTarget
+	GRDN I 6 Bright A_SkelMissile
+    GRDN H 6 Bright A_FaceTarget
+	GRDN I 6 Bright A_SkelMissile
+    GRDN H 6 Bright A_FaceTarget
+	GRDN G 14 Bright A_FaceTarget
+    Goto See
+  Pain:
+    GRDN J 3
+    GRDN J 3 A_Pain
+    Goto See
+  Death:
+    GRDN K 4 Bright A_Fall
+    GRDN L 4 Bright A_Explode
+    GRDN M 12 Bright A_Scream
+    GRDN NOQ 4 Bright
+    Stop
+   "@
+}
+
+sound "guardian/sight" { lump = "DSGRDNAL"; }
+sound "guardian/active" { lump = "DSGRDNPN"; }
+sound "guardian/pain" { lump = "DSGRDNPN"; }
+sound "guardian/death" { lump = "DSGRDNDT"; }

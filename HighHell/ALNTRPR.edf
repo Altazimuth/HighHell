@@ -1,0 +1,60 @@
+thingtype AlienTrooper 
+{
+  doomednum   30005
+  basictype Monster
+  spawnhealth 30
+  painchance  170
+  speed       14
+  radius      20.0
+  height      56.0
+  mass 100
+  seesound    "alientrooper/sight"
+  painsound   "popain"
+  deathsound  "alientrooper/death"
+  activesound "alientrooper/active"
+  
+  obituary_normal "got razzle-dazzzled by an Alien Trooper."
+  acs_spawndata 
+  { 
+    num   251;
+    modes doom 
+  }
+
+
+
+  States
+  @"
+  Spawn:
+    TRPR NO 10 A_Look
+    Loop
+  See:
+    TRPR AABBCCDD 3 A_Chase
+    Loop
+  Missile:
+    TRPR EF 10 Bright A_FaceTarget
+	TRPR G 4 Bright A_BspiAttack
+	TRPR F 4 A_FaceTarget
+	TRPR G 4 Bright A_BspiAttack
+	TRPR F 0
+    Goto See
+  Pain:
+    TRPR H 3
+    TRPR H 3 A_Pain
+    Goto See
+  Death:
+    TRPR I 5
+    TRPR J 5 A_Scream
+    TRPR K 5 A_Fall
+	TRPR L 5
+	TRPR M -1
+    Stop
+  Raise:
+    TRPR MLKJI 5
+    Goto See
+  "@
+}
+
+sound "alientrooper/sight" { lump = "DSATSIT"; }
+sound "alientrooper/pain" { lump = "DSGRDNPN"; }
+sound "alientrooper/active" { lump = "DSATACTV"; }
+sound "alientrooper/death" { lump = "DSATDTH"; }

@@ -1,0 +1,93 @@
+thingtype Aracnorb
+{
+  doomednum   30003
+  basictype FlyingMonster
+  addflags FLOATBOB
+  spawnhealth 170
+  painchance  150
+  speed       12
+  radius      24.0
+  height      56.0
+  mass 400
+  xscale 0.85
+  yscale 0.85
+  seesound    "aracnorb/sight"
+  attacksound "aracnorb/melee"
+  painsound   dmpain
+  deathsound  "aracnorb/death"
+  activesound bspact
+  
+  obituary_normal "suffered psychic trauma from an aracnorb's brainwaves."
+  obituary_melee  "had their skull chewed by an aracnorb."
+  acs_spawndata 
+  { 
+    num   252;
+    modes doom 
+  }
+
+  States
+  @"
+  Spawn:
+    ACNB A 1 A_Look
+    Loop
+  See:
+    ACNB A 2 A_Chase
+    Loop
+  Melee:
+    ACNB AB 5
+    ACNB C 6 A_Scratch(3, 6, "aracnorb/melee")
+    Goto See
+  Missile:
+    ACNB B 12 Bright A_FaceTarget
+    ACNB C 2 Bright A_MissileAttack("AracnorbBall", 1)
+    ACNB B 2 Bright
+    ACNB D 0 A_Jump(32,"See")
+    ACNB D 0 A_SpidRefire
+    Goto Missile+1
+  Pain:
+    ACNB I 2
+    ACNB I 2 A_Pain
+    Goto See
+  Death:
+    ACNB D 0 A_UnSetFlags(0, "FLOATBOB")
+    ACNB D 0 A_Scream
+    ACNB D 6 A_Fall
+    ACNB D 1
+    Wait
+  Crash:
+    ACNB EFG 6
+    ACNB H -1
+    Stop
+  Raise:
+    ACNB HGFEDA 8
+    ACNB A 0 A_SetFlags(0, "FLOATBOB")
+	Goto See
+  "@
+}
+
+thingtype AracnorbBall
+{
+  basictype Seeker
+  radius 13.0
+  height 8.0
+  speed 8.0
+  damage 3
+  translucency 75%
+  seesound plasma
+  deathsound firxpl
+  addflags TRANSLUCENT|SPACMISSILE|TLSTYLEADD
+  States
+  @"
+  Spawn:
+    ACNF AABB 1 Bright A_GenTracer
+    Loop
+  Death:
+    ACNF CDEFG 5 Bright
+    Stop
+  "@
+}
+
+sound "aracnorb/sight" { lump = "DSARACST"; }
+sound "aracnorb/death" { lump = "DSARACDT"; }
+sound "aracnorb/attack" { lump = "DSARACFR"; }
+sound "aracnorb/melee" { lump = "DSARACML"; }

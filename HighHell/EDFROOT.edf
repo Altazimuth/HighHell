@@ -1,0 +1,12 @@
+stdinclude("root.edf")
+
+// new monsters
+lumpinclude("ARACNORB")
+lumpinclude("GUARDIAN")
+lumpinclude("ALNTRPR")
+
+// new keys
+lumpinclude("COMBKEYS")
+
+// new damagetype
+lumpinclude("DAMAGE")
