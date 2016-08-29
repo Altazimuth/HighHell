@@ -79,7 +79,8 @@ thingtype AracnorbBall
   States
   @"
   Spawn:
-    ACNF AABB 1 Bright A_GenTracer
+    ACNF A 1 Bright A_GenTracer
+	ACNF ABBAABB 1 Bright
     Loop
   Death:
     ACNF CDEFG 5 Bright

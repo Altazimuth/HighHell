@@ -1,0 +1,117 @@
+thingtype CyberBruiser
+{
+  doomednum   30006
+  basictype Monster
+  addflags BOSS
+  spawnhealth 2000
+  painchance  20
+  speed       8
+  damage      10
+  radius      24.0
+  height      64.0
+  mass 1000
+  xscale 0.85
+  yscale 0.85
+  seesound    "cyberbruiser/sight"
+  attacksound claw
+  painsound   dmpain
+  deathsound  "cyberbruiser/death"
+  activesound dmact
+  
+  obituary_normal "was blown away by a Cybruiser."
+  obituary_melee  "was smashed by a Cybruiser."
+  acs_spawndata 
+  { 
+    num   250;
+    modes doom 
+  }
+
+  States
+  @"
+  Spawn:
+    BRUS AB 10 A_Look
+    Loop
+  See:
+    BRUS A 1 A_PlaySoundEx("cyberbruiser/stomp")
+    BRUS A 2 A_Chase
+    BRUS A 3 A_Chase
+    BRUS BB 3 A_Chase
+    BRUS C 1 A_PlaySoundEx("cyberbruiser/stomp")
+    BRUS C 2 A_Chase
+    BRUS C 3 A_Chase
+    BRUS DD 3 A_Chase
+    Loop
+  Melee:
+    BRUS GH 8 A_FaceTarget
+    BRUS I 8 A_Scratch(1, 0, "claw")
+    Goto See
+  Missile:
+    BRUS E 8 A_FaceTarget
+    BRUS F 12 Bright A_MissileAttack("BruiserMissile", 0, 6)
+    BRUS E 12 A_FaceTarget
+    BRUS F 12 Bright A_MissileAttack("BruiserMissile", 0, 6)
+    BRUS E 12 A_FaceTarget
+    BRUS F 12 Bright A_MissileAttack("BruiserMissile", 0, 6)
+	Goto See
+  Pain:
+    BRUS J 2
+    BRUS J 2 A_Pain
+    Goto See
+  Death:
+    BRUS K 6 Bright A_Scream
+    BRUS LMN 6 Bright
+    BRUS O 6 Bright A_Fall
+    BRUS QR 6 Bright
+    BRUS S 6
+    BRUS T -1 A_BossDeath
+    Stop
+  "@
+}
+
+thingtype BruiserMissile
+{
+  basictype Projectile
+  radius 8.0
+  height 12.0
+  speed 20.0
+  damage 10
+  seesound "bruisermissile/sight"
+  deathsound "bruisermissile/death"
+  addflags THRUGHOST|FIREDAMAGE
+  States
+  @"
+  Spawn:
+    FBRS A 1 Bright
+	FBRS A 1 Bright A_SpawnAbove("BruiserTrail")
+    Loop
+  Death:
+    BAL3 C 0 Bright A_SetTranslucent(0.67,1)
+    BAL3 C 6 Bright
+    BAL3 D 6 Bright A_DetonateEx(64,64,0,0,0,0,0,1)
+    BAL3 E 6 Bright
+    Stop
+  "@
+}
+
+thingtype BruiserTrail
+{
+  radius 3.0
+  height 3.0
+  speed 0
+  translucency 67%
+  flags NOBLOCKMAP|NOGRAVITY|TLSTYLESUB
+  States
+  @"
+  Spawn:
+    TNT1 A 3 Bright
+	PUFF ABCD 1 Bright
+    Stop
+  "@
+}
+
+sound "cyberbruiser/sight" { lump = "DSBRUSIT"; }
+sound "cyberbruiser/death" { lump = "DSBRUDTH"; }
+sound "cyberbruiser/stomp" { lump = "DSBRUWLK"; }
+
+sound "bruisermissile/sight" { lump = "DSBRUFIR"; }
+sound "bruisermissile/death" { lump = "DSHELLEX"; }

@@ -4,6 +4,7 @@ stdinclude("root.edf")
 lumpinclude("ARACNORB")
 lumpinclude("GUARDIAN")
 lumpinclude("ALNTRPR")
+lumpinclude("CYBRBRSR")
 
 // new keys
 lumpinclude("COMBKEYS")
