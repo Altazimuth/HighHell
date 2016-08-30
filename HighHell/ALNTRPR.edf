@@ -9,7 +9,7 @@ thingtype AlienTrooper
   height      56.0
   mass 100
   seesound    "alientrooper/sight"
-  painsound   "popain"
+  painsound   popain
   deathsound  "alientrooper/death"
   activesound "alientrooper/active"
   

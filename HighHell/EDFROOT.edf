@@ -11,3 +11,6 @@ lumpinclude("COMBKEYS")
 
 // new damagetype
 lumpinclude("DAMAGE")
+
+// new terrains
+lumpinclude("TTTHINGS")

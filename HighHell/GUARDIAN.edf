@@ -15,7 +15,6 @@ thingtype Guardian
   activesound "guardian/active"
   
   obituary_normal "got shown why they're called guardians."
-  //obituary_melee  "got shown why they're called guardians."
   acs_spawndata 
   { 
     num   251;

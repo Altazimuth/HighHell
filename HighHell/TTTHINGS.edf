@@ -1,0 +1,28 @@
+// Terrain Type Things
+thingtype TerrainNukageSplash
+{
+  radius      2.0
+  height      4.0
+  cflags      NOBLOCKMAP|DROPOFF|MISSILE|LOGRAV|NOSPLASH|NOCROSS|CANNOTPUSH|NOZERODAMAGE
+
+  States
+  @"
+  Spawn:
+    NKGE ABC 10
+	NKGE C 16
+	NKGE D 10
+    Stop
+  "@
+}
+
+thingtype TerrainNukageBase
+{
+  cflags      NOBLOCKMAP|NOGRAVITY|NOSPLASH
+  
+  States
+  @"
+  Spawn:
+    NKGE EFGHIJK 5
+    Stop
+  "@
+}

@@ -1,0 +1,42 @@
+// This lump is autoloaded and should NOT be lumpincluded
+// Splash Objects
+splash Nukage
+{
+   smallclass = TerrainNukageBase
+   smallclip  = 12
+   smallsound = muck
+   
+   baseclass  = TerrainNukageBase
+   chunkclass = TerrainNukageSplash
+   sound      = muck
+   
+   chunkxvelshift = 8
+   chunkyvelshift = 8
+   chunkzvelshift = 8
+   chunkbasezvel  = 1
+}
+
+// Terrain Objects
+
+// Note: Default terrain Solid is defined by the game engine.
+
+terrain Nukage
+{
+   splash   = Nukage
+   footclip = 10
+   liquid   = true
+   splashalert = true
+   
+   useptclcolors = true
+   ptclcolor1    = "127 255 127"
+   ptclcolor2    = "0 255 0"
+}
+
+// Floors
+floor { flat = NUKAGE1; terrain = Nukage }
+floor { flat = NUKAGE2; terrain = Nukage }
+floor { flat = NUKAGE3; terrain = Nukage }
+
+// Heretic terrains cause noise alerts
+terraindelta { name = Water;  splashalert = true }
+terraindelta { name = Lava;   splashalert = true }
