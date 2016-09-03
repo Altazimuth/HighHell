@@ -1,0 +1,16 @@
+// Eternity Engine custom episode menu definition / declaration
+mn_episode = HHEpisodes
+
+//This is the menu definition
+menu HHEpisodes
+{
+  item { type = title;  patch = "M_EPISOD" }
+  item { type = gap }
+  //item { type = runcmd; patch = "TUTTILE"; cmd = "mn_start_mapname TUTORIAL" }
+  item { type = runcmd; patch = "M_HHELL"; cmd = "mn_start_mapname MAP01" }
+  
+  first = 2
+  flags = SKULLMENU|BIGFONT|LEFTALIGNED
+  x = 32
+  y = 52
+}

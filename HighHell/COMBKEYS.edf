@@ -75,9 +75,8 @@ lockdef 12
 {
   require  PurpleCard
   mapcolor "#800080"
-  //mapcolor "$mapcolor_frnd"
    
-  message       "You need a purple card to activate this object"
+  message       "You need a purple card to activate this door"
   remotemessage "You need a purple card to activate this object"
 }
 
@@ -87,7 +86,7 @@ lockdef 13
   require  OrangeCard
   mapcolor "#FF7F00"
    
-  message       "You need a orange card to activate this object"
+  message       "You need a orange card to activate this door"
   remotemessage "You need a orange card to activate this object"
 }
 
@@ -97,6 +96,6 @@ lockdef 23
   require  GreenCard
   mapcolor "#00FF00"
    
-  message       "You need a green card to activate this object"
+  message       "You need a green card to activate this door"
   remotemessage "You need a green card to activate this object"
 }
