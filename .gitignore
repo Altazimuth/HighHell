@@ -1,2 +1,7 @@
 aa-tex.wad
+*.dbs
+*.backup*
 *.bak
+HighHell/textures/*.lmp
+HighHell/sprites/doom2/*
+HighHell/flats/fixed/*
