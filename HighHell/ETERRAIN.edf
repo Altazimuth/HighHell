@@ -16,6 +16,22 @@ splash Nukage
    chunkbasezvel  = 1
 }
 
+splash Purpage
+{
+   smallclass = TerrainPurpageBase
+   smallclip  = 12
+   smallsound = eedrip
+   
+   baseclass  = TerrainPurpageBase
+   chunkclass = TerrainPurpageSplash
+   sound      = gloop
+   
+   chunkxvelshift = 8
+   chunkyvelshift = 8
+   chunkzvelshift = 8
+   chunkbasezvel  = 1
+}
+
 // Terrain Objects
 
 // Note: Default terrain Solid is defined by the game engine.
@@ -32,10 +48,23 @@ terrain Nukage
    ptclcolor2    = "0 255 0"
 }
 
+terrain Purpage
+{
+   splash   = Purpage
+   footclip = 10
+   liquid   = true
+   splashalert = true
+   
+   useptclcolors = true
+   ptclcolor1    = "255 127 155"
+   ptclcolor2    = "128 0 128"
+}
+
 // Floors
-floor { flat = NUKAGE1; terrain = Nukage }
-floor { flat = NUKAGE2; terrain = Nukage }
-floor { flat = NUKAGE3; terrain = Nukage }
+floor { flat = PURPW1; terrain = Purpage }
+floor { flat = PURPW2; terrain = Purpage }
+floor { flat = PURPW3; terrain = Purpage }
+floor { flat = PURPW4; terrain = Purpage }
 
 // Heretic terrains cause noise alerts
 terraindelta { name = Water;  splashalert = true }

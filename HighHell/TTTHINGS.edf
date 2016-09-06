@@ -26,3 +26,31 @@ thingtype TerrainNukageBase
     Stop
   "@
 }
+
+thingtype TerrainPurpageSplash
+{
+  radius      2.0
+  height      4.0
+  cflags      NOBLOCKMAP|DROPOFF|MISSILE|LOGRAV|NOSPLASH|NOCROSS|CANNOTPUSH|NOZERODAMAGE
+
+  States
+  @"
+  Spawn:
+    PRPT ABC 10
+	PRPT C 16
+	PRPT D 10
+    Stop
+  "@
+}
+
+thingtype TerrainPurpageBase
+{
+  cflags      NOBLOCKMAP|NOGRAVITY|NOSPLASH
+  
+  States
+  @"
+  Spawn:
+    PRPT EFGHIJK 5
+    Stop
+  "@
+}
