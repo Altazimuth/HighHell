@@ -1,0 +1,13 @@
+Max "Altazimuth" Waine - Project Lead
+Paul "skillsaw" DeBruyne - Inspiration & textures
+Chris "lupinx-Kassman" Kassap - Inspiration & textures
+
+The Doom 2 Fixes Team:
+	Revenant100 aka Marphy Black
+	DoomJedi - Wolfenstein SS firing rotation sprites
+	ItsNatureToDie - SS firing rotation sprites
+	PSTrooper - SS pain rotation sprites
+	NightFright - Help screen, intermission graphics, and status bar face fixes
+	Da Werecat - Rocket launcher firing frame fix
+	John Romero - Releasing the missing rotation sprites
+	Linguica - Documenting and providing fix for the tall sprites wrapping error.
