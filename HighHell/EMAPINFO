@@ -1,5 +1,12 @@
 [MAP01]
   levelname = E1S0: The Homestead
   creator   = Altazimuth
-  music     = SNOWHOUSE
-  skyname   = SKYBLZ_2
+  music     = SNOWMAN
+  skyname   = SKYAA_02
+
+[MAP02]
+  levelname = E1S1: Cumulonimble, Cumuloquick
+  creator   = Altazimuth
+  
+  skyname   = SKYAA_02
+  acsscript = E1S1ACS

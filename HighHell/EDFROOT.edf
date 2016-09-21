@@ -14,3 +14,6 @@ lumpinclude("DAMAGE")
 
 // new terrains
 lumpinclude("TTTHINGS")
+
+// DeHackEd through frame deltas
+lumpinclude("FDELTAS")

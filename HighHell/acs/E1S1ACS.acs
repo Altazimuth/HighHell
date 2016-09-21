@@ -1,0 +1,10 @@
+#include "zcommon.acs"
+
+script 0 ENTER
+{
+   // Force the player to start falling
+   // ThrustThingZ doesn't work
+   Thing_Stop(0);
+   ThrustThing(64, 1, 0, 0);
+   ThrustThing(191, 1, 0, 0);
+}

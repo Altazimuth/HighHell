@@ -1,1 +1,17 @@
-comp_terrain 0
+comp_terrain      0
+comp_overunder    0
+comp_theights     0
+comp_planeshoot   0
+
+draw_particles    1
+particle_trans    1
+blood_particles   2
+bullet_particles  2
+
+translucency      1
+tran_filter_pct  66
+r_tlstyle         2
+
+wipetype          2
+
+mapportal_overlay 1

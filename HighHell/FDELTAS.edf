@@ -1,0 +1,54 @@
+// These frame deltas replace the DeHackEd file.
+
+framedelta { name S_PISTOL2; tics 5; }
+framedelta { name S_PISTOL3; tics 3; }
+framedelta { name S_PISTOL4; tics 3; }
+
+// Doom 2 Sprite Fixes
+
+framedelta { name S_DSGUNFLASH1; tics 4; }
+framedelta { name S_DSGUNFLASH2; tics 3; }
+
+framedelta
+{
+  name S_POSS_ATK2;
+  sprite 'POSS'; spriteframe 'F'; fullbright true;
+}
+
+framedelta
+{
+  name S_CPOS_ATK4;
+  sprite 'CPOS'; spriteframe 'F'; fullbright true;
+}
+framedelta
+{
+  name S_CPOS_ATK4;
+  sprite 'CPOS'; spriteframe 'F'; fullbright true;
+}
+
+framedelta {
+  name S_SPID_ATK1;
+  sprite 'SPID'; spriteframe 'A'; fullbright false;
+}
+
+framedelta
+{
+  name S_BSPI_ATK1;
+  sprite 'BSPI'; spriteframe 'A'; fullbright false;
+}
+
+framedelta
+{
+  name S_CYBER_ATK2;
+  sprite 'CYBR'; spriteframe 'F'; fullbright true;
+}
+framedelta
+{
+  name S_CYBER_ATK4;
+  sprite 'CYBR'; spriteframe 'F'; fullbright true;
+}
+framedelta
+{
+  name S_CYBER_ATK6;
+  sprite 'CYBR'; spriteframe 'F'; fullbright true;
+}
